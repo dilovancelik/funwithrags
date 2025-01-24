@@ -1,0 +1,210 @@
+Lov om stedbestemt information
+VI MARGRETHE DEN ANDEN, af Guds Nåde Danmarks Dronning, gør vitterligt:
+Folketinget har vedtaget og Vi ved Vort samtykke stadfæstet følgende lov:
+
+
+
+Kapitel 1
+
+Anvendelsesområde
+
+
+
+§ 1. Loven fastsætter regler for
+
+1) de nationale geodætiske infrastrukturer for Danmark, Færøerne og Grønland,
+
+2) landkortlægningen af Danmark, Færøerne og Grønland,
+
+3) søkortlægningen af Danmark, Færøerne og Grønland,
+
+4) infrastrukturen for stedbestemt information i Danmark og
+
+5) samordning og koordination af stedbestemt information med tilhørende infrastruktur.
+
+
+
+Kapitel 2
+
+De nationale geodætiske infrastrukturer
+
+
+
+§ 2. Som grundlag for opmåling, sø- og landkortlægning og infrastrukturen for stedbestemt information skal energi-, forsynings- og klimaministeren etablere, drive og videreudvikle de nationale geodætiske infrastrukturer for Danmark, Færøerne og Grønland.
+
+Stk. 2. Ministeren kan efter forhandling med berørte offentlige myndigheder og private organisationer fastsætte regler om registrerede positioneringstjenester.
+
+
+
+§ 3. Energi-, forsynings- og klimaministeren kan erhverve arealer til fikspunkter og installationer, som er nødvendige for de nationale geodætiske infrastrukturer i Danmark, Færøerne og Grønland. Ministeren kan erhverve en ejendomsret eller en brugsret til arealet.
+
+Stk. 2.  Sker erhvervelsen som en brugsret, skal arealets beliggenhed og omfang og eventuelle forpligtelser for ejendommens ejer fastlægges i en tinglyst servitut.
+
+Stk. 3. Servitutten skal respekteres af ejendommens ejer og brugere og panthavere og andre indehavere af begrænsede rettigheder i ejendommen, uanset hvornår sådan ret over ejendommen er erhvervet.
+
+
+
+Kapitel 3
+
+Landkortlægning
+
+
+
+§ 4. Energi-, forsynings- og klimaministeren varetager landkortlægningen af Danmark, Færøerne og Grønland og etablering, drift og videreudvikling af de til kortlægningen hørende data, registre og kortværk.
+
+Stk. 2. Ministeren kan efter forhandling med berørte myndigheder fastsætte regler om de til kortlægningen hørende registre, herunder om myndigheders indberetning til disse registre, hvordan indberetning skal finde sted, og hvilket format data skal have.
+
+
+
+Kapitel 4
+
+Søkortlægning, opmåling og eneret til fremstilling af søkort
+
+
+
+§ 5. Energi-, forsynings- og klimaministeren varetager kortlægningen af farvandene omkring Danmark, Færøerne og Grønland og etablering, drift og videreudvikling af de til kortlægningen hørende data, registre og kortværk.
+
+Stk. 2. Ministeren har eneret til fremstilling af søkort.
+
+Stk. 3. Ministeren kan efter forhandling med berørte myndigheder fastsætte regler om de til kortlægningen hørende registre, herunder om myndigheders indberetning til disse registre, hvordan indberetning skal finde sted, og hvilket format data skal have.
+
+Stk. 4. Ministeren kan fastsætte regler om, at den, der udfører aktiviteter i farvandene omkring Danmark, Færøerne og Grønland, skal indberette data og tegninger over området, der er omfattet af aktiviteten, til ministeren. Ministeren kan endvidere fastsætte regler om, hvordan indberetningen skal finde sted, og hvilket format data skal have.
+
+
+
+§ 6. Som led i kortlægningen af farvandene omkring Danmark, Færøerne og Grønland gennemfører energi-, forsynings- og klimaministeren i samarbejde med Forsvarsministeriet søopmåling heraf.
+
+Stk. 2. Ministeren kan efter indhentning af udtalelse fra Forsvarsministeriet bemyndige andre til på ministerens vegne at gennemføre søopmåling efter stk. 1.
+
+
+
+§ 7. Før søopmåling til andre formål end fremstilling af søkort må foretages i farvandene omkring Danmark, Færøerne og Grønland, skal der indhentes tilladelse hertil hos energi-, forsynings- og klimaministeren. Til brug for ministerens afgørelse af, om der kan gives tilladelse, skal ministeren indhente en udtalelse fra Forsvarsministeriet.
+
+Stk. 2.  Når opmålingen er afsluttet, skal kopi af alle opmålingsdata indberettes til ministeren.
+
+Stk. 3. Ministeren kan fastsætte regler om ansøgningens udformning og om vilkår, der knytter sig til tilladelsen. Ministeren kan tillige fastsætte regler om, hvordan indberetning skal finde sted, og hvilket format opmålingsdata efter stk. 2 skal have.
+
+
+
+Kapitel 5
+
+Infrastruktur for stedbestemt information
+
+
+
+§ 8. Energi-, forsynings- og klimaministeren forestår og varetager koordinationen af infrastrukturen for stedbestemt information i Danmark.
+
+Stk. 2. Ministeren nedsætter et rådgivende udvalg, som har til formål at bistå ministeren i overvågningen, videreudviklingen og koordinationen af infrastrukturen for stedbestemt information. Udvalget fastsætter selv sin forretningsorden.
+
+Stk. 3. Ministeren kan nedsætte eller indgå i andre udvalg og samarbejder om etablering og drift af sektor- og temaspecifikke infrastrukturer for stedbestemt information.
+
+
+
+§ 9. Energi-, forsynings- og klimaministeren kan iværksætte initiativer, som videreudvikler infrastrukturen for stedbestemt information med det formål at fremme interoperabilitet og nyttiggørelse af data.
+
+Stk. 2. Ministeren kan fastsætte regler for udformningen og anvendelsen af stedbestemte informationer, som indgår i fællesoffentlige administrationsgrundlag. Regler herom fastsættes efter forhandling med berørte myndigheder.
+
+
+
+§ 10. Energi-, forsynings- og klimaministeren kan som led i videreudviklingen af infrastrukturen for stedbestemt information etablere, drive og videreudvikle registre, herunder Danmarks Administrative Geografiske Inddelinger, Danske Stednavne, registeret over faste ejendommes ejere og registeret over faste ejendommes beliggenhedsadresse.
+
+Stk. 2. Ministeren kan fastsætte regler for kommunalbestyrelsens tildeling af beliggenhedsadresser og regler for, hvilke oplysninger der skal indberettes og ajourføres til registeret over faste ejendommes ejere.
+
+Stk. 3.  Ministeren kan efter forhandling med berørte myndigheder herudover fastsætte regler om registre omfattet af stk. 1, herunder om myndigheders indberetning til disse registre, hvordan indberetning skal finde sted, og hvilket format data skal have.
+
+
+
+Kapitel 6
+
+Samordning og koordination
+
+
+
+§ 11. Energi-, forsynings- og klimaministeren har ansvaret for koordinationen af offentlige opgaver omfattet af kapitel 2-5, herunder af offentlig opmåling og kortlægning og anden offentlig registrering af stedbestemte informationer. Ministeren kan indgå i tværoffentlige samarbejder til varetagelsen af disse opmålings-, kortlægnings- og registreringsopgaver.
+
+Stk. 2. Ministeren kan efter forhandling med berørte myndigheder og internationale og private organisationer fastsætte regler om standarder og normer for gennemførelsen af offentlig opmåling og kortlægning og anden offentlig registrering af stedbestemte informationer.
+
+Stk. 3. Offentlige myndigheder og institutioner og koncessionerede selskaber skal efter anmodning give ministeren oplysning om igangværende og påtænkte aktiviteter inden for opmåling, kortlægning og anden registrering af stedbestemte informationer.
+
+
+
+Kapitel 7
+
+Distribution af data, adgang til data og betalingsregler
+
+
+
+§ 12. Energi-, forsynings- og klimaministeren beslutter, hvilke af de data, registre, kortværk og ydelser, som er omfattet af lovens anvendelsesområde, der kan udbydes til salg, og fastsætter reglerne for betaling herfor.
+
+
+
+§ 13. Energi-, forsynings- og klimaministeren beslutter, hvilke af de data, registre og kortværk, som er omfattet af lovens anvendelsesområde, der kan anvendes frit af andre offentlige myndigheder, virksomheder og borgere, og beslutter, hvorledes disse data, registre og kortværk gøres tilgængelige.
+
+Stk. 2. Kommuner, der er i besiddelse af data, der er indsamlet i samarbejde mellem kommuner og ministeren, og som ministeren har besluttet at gøre tilgængelige efter stk. 1, kan stille disse data frit til rådighed på tilsvarende måde.
+
+
+
+§ 14. Energi-, forsynings- og klimaministeren kan efter forhandling med andre myndigheder opbevare og distribuere deres data, registre og kortværk.
+
+
+
+Kapitel 8
+
+Generelle bestemmelser
+
+
+
+§ 15. Energi-, forsynings- og klimaministeren har til enhver tid mod behørig legitimation adgang til udendørs lokaliteter for at udføre opgaver efter loven.
+
+
+
+§ 16. Med bøde straffes den, som forsætligt eller groft uagtsomt udgraver, beplanter, ødelægger eller fjerner et fikspunkt eller en installation, der er opstillet i henhold til § 3, stk. 1.
+
+Stk. 2. Der kan pålægges selskaber m.v. (juridiske personer) strafansvar efter reglerne i straffelovens 5. kapitel.
+
+
+
+§ 17. Med bøde straffes den, som overtræder § 7, stk. 1.
+
+Stk. 2. Der kan pålægges selskaber m.v. (juridiske personer) strafansvar efter reglerne i straffelovens 5. kapitel.
+
+
+
+§ 18. Energi-, forsynings- og klimaministeren kan bemyndige en statslig myndighed under Energi-, Forsynings- og Klimaministeriet til at udøve de opgaver og beføjelser, der i denne lov er tillagt ministeren.
+
+Stk. 2.  Delegerer ministeren opgaven med at give tilladelse efter § 7, stk. 1, kan ministeren beslutte, at afgørelser efter § 7, stk. 1, ikke kan påklages til anden administrativ myndighed.
+
+
+
+Kapitel 9
+
+Ikrafttrædelsesbestemmelser m.v.
+
+
+
+§ 19. Loven træder i kraft den 1. juli 2017.
+
+Stk. 2. Lov om Geodatastyrelsen, jf. lovbekendtgørelse nr. 1210 af 9. oktober 2013, og lov nr. 318 af 16. december 1931 angaaende Geodætisk Instituts trigonometriske Stationer m.v. ophæves.
+
+Stk. 3. Regler, der er fastsat i medfør af lov om Geodatastyrelsen, jf. lovbekendtgørelse nr. 1210 af 9. oktober 2013, forbliver i kraft, indtil de ophæves eller afløses af regler udstedt i medfør af denne lov.
+
+§ 20. I lov nr. 1331 af 19. december 2008 om infrastruktur for geografisk information foretages følgende ændring:
+
+1. Lovens titel affattes således:
+»Lov om infrastruktur for geografisk information i Den Europæiske Union«.
+
+§ 21. I lov om udstykning og anden registrering i matriklen, jf. lovbekendtgørelse nr. 1213 af 7. oktober 2013, som ændret ved § 1 i lov nr. 80 af 24. januar 2017, foretages følgende ændring:
+
+1. Efter § 46 indsættes:
+
+»§ 46 a. Kapitel 6 i lov om stedbestemt information om samordning og koordination finder anvendelse på Geodatastyrelsens opgaver omfattet af denne lov.
+
+Stk. 2. § 12 om betaling for data, registre, kortværk og ydelser i lov om stedbestemt information finder anvendelse på data, registre, kortværk og ydelser omfattet af denne lov.
+
+Stk. 3. § 13 om fri adgang til data, registre og kortværk i lov om stedbestemt information finder anvendelse på data, registre og kortværk omfattet af denne lov.«
+
+
+
+§ 22. Loven gælder ikke for Færøerne og Grønland.
+
+Stk. 2. Lovens §§ 1 og 2, § 3, stk. 1, og §§ 4-7 og 11-19 kan ved kongelig anordning helt eller delvis sættes i kraft for Færøerne og Grønland med de ændringer, som de færøske og grønlandske forhold tilsiger.Givet på Christiansborg Slot, den 26. april 2017Under Vor Kongelige Hånd og SeglMARGRETHE R./ Lars Christian Lilleholt

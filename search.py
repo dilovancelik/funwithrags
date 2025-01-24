@@ -48,7 +48,7 @@ def embed_documents():
 
 if __name__ == "__main__":
     # embed_documents()
-    
+
     query = input("Hvilken lov vil du gerne søge efter\n")
 
     emb = OllamaEmbeddings(model="llama3").embed_query(query)
@@ -58,7 +58,10 @@ if __name__ == "__main__":
     conn.autocommit = True
     cur = conn.cursor()
 
-    cur.execute("SELECT name, embedding <-> %s FROM laws ORDER BY embedding <-> %s::vector LIMIT 10;", (str(emb),str(emb)))
+    cur.execute(
+        "SELECT name, embedding <-> %s FROM laws ORDER BY embedding <-> %s::vector LIMIT 10;",
+        (str(emb), str(emb)),
+    )
 
     result = cur.fetchall()
     print(result)

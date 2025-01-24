@@ -5,13 +5,17 @@ from langchain_postgres import PGVector
 from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 llm = ChatOllama(model="llama3")
 
 embedding=OllamaEmbeddings(model="llama3")
 vectorstore= PGVector(
     embeddings=embedding,
-    collection_name="laws",
-    connection="postgresql+psycopg://postgres:postgres@localhost:5432/vector_rag"
+    collection_name="laws3_split_v2",
+    connection=os.getenv("PG_CONN_STR")
 )
 
 prompt = hub.pull("rlm/rag-prompt")
@@ -23,11 +27,9 @@ class State(TypedDict):
     answer: str
 
 def retrieve(state: State):
-    retrieved_docs = vectorstore.similarity_search(state["question"], k=10)
+    retrieved_docs = vectorstore.similarity_search(state["question"], k=4)
     for doc in retrieved_docs:
-        print(doc.metadata)
-
-"""
+        print(doc)
     return { "context": retrieved_docs }
 
 def generate(state: State):
@@ -46,7 +48,8 @@ graph = graph_builder.compile()
 question = input("Hvad vil du vide om loven\n")
 response = graph.invoke({ "question": question })
 print(response["answer"])
-"""
 
+"""
 question = input("input\n")
 retrieve({"question": question})
+"""

@@ -1,0 +1,529 @@
+
+Lov om tjenester i informationssamfundet,  
+
+ herunder visse  
+
+ aspekter af elektronisk handel1) 
+
+ 
+VI MARGRETHE DEN ANDEN, af Guds Nåde Danmarks Dronning, gør  
+
+ vitterligt:  
+
+ Folketinget har vedtaget og Vi ved Vort samtykke stadfæstet  
+
+ følgende lov:
+ 
+Lovens anvendelsesområde
+
+§ 1. Loven finder anvendelse på tjenester i  
+
+ informationssamfundet.
+Stk. 2. Loven finder ikke anvendelse på forhold,  
+
+ der vedrører:
+1)	Beskatning.
+2)	Persondatabeskyttelse.
+3)	Konkurrencelovens regler om konkurrencebegrænsende aftaler,  
+
+ vedtagelser og samordnet praksis, misbrug af dominerende stilling samt  
+
+ fusionskontrol.
+4)	Notarvirksomhed eller lignende virksomhed, der er forbundet med  
+
+ udøvelse af offentlig myndighed.
+5)	Repræsentation af klienter i retten.
+6)	Spil, som indebærer, at der gøres en indsats med penge  
+
+ i hasardspil, herunder lotteri og væddemål.
+Definitioner
+
+
+§ 2. I denne lov forstås ved:
+1)	Tjenester i informationssamfundet  
+
+ (informationssamfundstjenester): Enhver tjeneste, der har et kommercielt  
+
+ sigte, og som leveres online (ad elektronisk vej over en vis distance)  
+
+ på individuel anmodning fra en tjenestemodtager. 
+2)	Tjenesteyder: Enhver fysisk eller juridisk person, som  
+
+ leverer en informationssamfundstjeneste.
+3)	Etableret tjenesteyder: En tjenesteyder, der udøver  
+
+ erhvervsmæssig virksomhed ved hjælp af en fast indretning i et  
+
+ ikke nærmere angivet tidsrum.
+4)	Tjenestemodtager: Enhver fysisk eller juridisk person, der  
+
+ modtager og anvender en informationssamfundstjeneste.
+5)	Forbruger: En fysisk person, der ikke handler som led i sin  
+
+ handelsmæssige eller erhvervsmæssige virksomhed.
+6)	Kommerciel kommunikation: Enhver form for kommunikation, der  
+
+ direkte eller indirekte er bestemt til at fremme afsætningen af varer  
+
+ eller tjenesteydelser eller til at etablere et image for en virksomhed, en  
+
+ organisation eller en person, som udøver handels-, industri- eller  
+
+ håndværksvirksomhed eller et lovreguleret erhverv.
+7)	Lovreguleret erhverv: Ethvert erhverv som omhandlet i artikel  
+
+ 1, litra d, i direktiv 89/48/EØF om indførelse af en generel  
+
+ ordning for gensidig anerkendelse af eksamensbeviser for  
+
+ erhvervskompetencegivende videregående uddannelser af mindst tre  
+
+ års varighed eller artikel 1, litra f, i direktiv 92/51/EØF om  
+
+ anden generelle ordning for anerkendelse af erhvervsuddannelser til  
+
+ supplering af direktiv 89/48/EØF.
+8)	Koordineret område: Regler, der er fastsat i Den  
+
+ Europæiske Unions medlemsstater og håndhæves af  
+
+ medlemsstaternes myndigheder, og som omhandler krav til  
+
+ informationssamfundstjenester eller krav til leverandører af  
+
+ informationssamfundstjenester, når aktivitet som leverandør  
+
+ påbegyndes eller udøves. Det koordinerede område omfatter  
+
+ ikke krav til varer som sådanne eller krav til levering af varer.
+9)	Kommunikationsnet: Et system, der benyttes til transmission  
+
+ af information mellem tilsluttede terminaler.
+Hjemlandskontrol
+
+
+§ 3. En informationssamfundstjeneste, der leveres  
+
+ af en tjenesteyder, som er etableret i Danmark, skal inden for det  
+
+ koordinerede område, jf. § 2, nr. 8, udøves i overensstemmelse  
+
+ med dansk ret. Dette gælder, uanset om tjenesten alene retter sig mod  
+
+ et andet land inden for Den Europæiske Union/Det Europæiske  
+
+ Økonomiske Samarbejdsområde.
+Gensidig anerkendelse
+
+
+§ 4. En tjenesteyder, der er etableret i et andet  
+
+ land inden for Den Europæiske Union/Det Europæiske  
+
+ Økonomiske Samarbejdsområde, og som leverer en  
+
+ informationssamfundstjeneste, er undtaget fra overholdelse af danske regler  
+
+ inden for det koordinerede område, jf. § 2, nr. 8, selv om tjenesten  
+
+ retter sig mod Danmark, jf. dog §§ 5 og 6.
+Undtagelser
+
+
+§ 5. §§ 3 og 4 indebærer ingen ændring  
+
+ i de gældende danske regler på følgende  
+
+ områder:
+1)	Ophavsret og beslægtede rettigheder, rettigheder som omhandlet  
+
+ i Rådets direktiv 87/54/EØF om retlig beskyttelse af  
+
+ halvlederprodukters topografi og i Europa-Parlamentets og Rådets  
+
+ direktiv 96/9/EF om retlig beskyttelse af databaser, samt industrielle  
+
+ ejendomsrettigheder.
+2)	Udstedelse af elektroniske penge af institutter, for hvilke  
+
+ medlemsstaterne har anvendt en af undtagelserne i artikel 8, stk. 1, i  
+
+ Europa-Parlamentets og Rådets direktiv 2000/46/EF om adgang til at  
+
+ optage og udøve virksomhed som udsteder af elektroniske penge og  
+
+ tilsyn med en sådan virksomhed.
+3)	Markedsføring af andele i investeringsforeninger i henhold  
+
+ til artikel 44, stk. 2, i Rådets direktiv 85/611/EØF om  
+
+ samordning af love og administrative bestemmelser om visse institutter for  
+
+ kollektiv investering i værdipapirer.
+4)	Visse forsikringer i henhold til artikel 30 og afsnit IV i direktiv  
+
+ 92/49/EØF (det tredje skadeforsikringsdirektiv), afsnit IV i direktiv  
+
+ 92/96/EØF (det tredje livsforsikringsdirektiv), artikel 7 og 8 i  
+
+ direktiv 88/357/EØF (det andet skadeforsikringsdirektiv) og artikel 4  
+
+ i direktiv 90/619/EØF (det andet livsforsikringsdirektiv).
+5)	Forholdet om, hvorvidt uopfordret markedsføring via  
+
+ elektronisk post er tilladt.
+Indgrebsprocedure
+
+
+§ 6. Uanset § 4 kan myndighederne træffe en  
+
+ foranstaltning, som begrænser adgangen til at levere en  
+
+ informationssamfundstjeneste, over for en tjenesteyder, der er etableret i et  
+
+ andet land inden for Den Europæiske Union/Det Europæiske  
+
+ Økonomiske Samarbejdsområde, hvis foranstaltningen
+1)	er nødvendig af hensyn til
+a)	den offentlige orden, især forebyggelse, efterforskning,  
+
+ afsløring og retsforfølgning af lovovertrædelser,  
+
+ herunder beskyttelsen af mindreårige og bekæmpelsen af enhver  
+
+ tilskyndelse til had på grund af race, køn, religion eller  
+
+ nationalitet, og krænkelser af enkeltpersoners værdighed,
+b)	beskyttelse af folkesundheden,
+c)	den offentlige sikkerhed og
+d)	forbrugerne, herunder investorer,
+2)	træffes over for en bestemt informationssamfundstjeneste, som  
+
+ er til skade for de i nr. 1 nævnte hensyn, og
+3)	står i rimeligt forhold til målet.
+Stk. 2. Inden foranstaltningen efter stk. 1  
+
+ træffes, skal myndighederne i etableringslandet opfordres til at gribe  
+
+ ind. Griber etableringslandets myndigheder ikke ind, eller er indgrebet ikke  
+
+ tilstrækkeligt, skal den danske myndighed underrette Kommissionen og  
+
+ etableringslandets myndigheder om foranstaltningen, inden den  
+
+ træffes.
+Stk. 3. Myndighederne kan i hastende tilfælde  
+
+ fravige betingelserne i stk. 2. Kommissionen og etableringslandets  
+
+ myndigheder skal i disse tilfælde snarest muligt underrettes om  
+
+ foranstaltningen og om årsagen til dens hastende karakter.
+Stk. 4. Procedurerne efter stk. 2 og 3 finder ikke  
+
+ anvendelse på foranstaltninger, der træffes som led i  
+
+ efterforskning og afgørelse af straffesager.
+Generel oplysningspligt
+
+
+§ 7. En tjenesteyder skal give oplysning  
+
+ om
+1)	tjenesteyderens navn,
+2)	den fysiske adresse, hvor tjenesteyderen er etableret,
+3)	e-post-adresse og eventuelt postadresse og andre oplysninger om  
+
+ tjenesteyderen, som gør det muligt at kontakte og kommunikere med  
+
+ tjenesteyderen,
+4)	CVR-nummeret, hvis tjenesteyderen er registreret i Det Centrale  
+
+ Virksomhedsregister,
+5)	tilhørsforhold til eventuelle godkendelsesordninger, herunder  
+
+ den relevante tilsynsmyndighed.
+Stk. 2. En tjenesteyder, der udøver et  
+
+ lovreguleret erhverv, skal desuden give
+1)	oplysning om enhver brancheorganisation eller lignende, hvor  
+
+ tjenesteyderen er registreret,
+2)	oplysning om erhvervsbetegnelsen og den medlemsstat, hvor den er  
+
+ givet, og
+3)	en henvisning til de faglige regler, der gælder for det  
+
+ lovregulerede erhverv, og hvorledes der kan opnås adgang til  
+
+ disse.
+Stk. 3. Der skal for tjenestemodtageren og myndighederne  
+
+ være en let tilgængelig og vedvarende adgang til de i stk. 1 og 2  
+
+ nævnte oplysninger.
+Prisinformation
+
+
+§ 8. Når der gives oplysning om pris for en  
+
+ informationssamfundstjeneste, skal prisen angives klart og tydeligt. Det skal  
+
+ fremgå, hvorvidt prisen er inklusive afgifter og  
+
+ leveringsomkostninger.
+Identifikation af kommerciel kommunikation
+
+
+§ 9. Al kommerciel kommunikation, der er en del af  
+
+ eller udgør en informationssamfundstjeneste, skal udformes og  
+
+ præsenteres, så det tydeligt fremgår, at der er tale om  
+
+ kommerciel kommunikation. Det skal tydeligt fremgå, på hvis vegne  
+
+ den kommercielle kommunikation udsendes.
+Stk. 2. Når reklametilbud som for eksempel  
+
+ rabatter, tilgift og gaver er tilladt, skal betingelserne for deltagelse i  
+
+ disse foranstaltninger være let tilgængelige og fremlægges  
+
+ klart og tydeligt. Betingelserne i 1. pkt. finder tilsvarende anvendelse  
+
+ på salgsfremmende konkurrencer og spil, der er tilladt.
+Oplysningspligt
+
+
+§ 10. Inden en ordre afgives, skal en tjenesteyder  
+
+ klart, forståeligt og tydeligt give tjenestemodtageren oplysning  
+
+ om
+1)	de forskellige tekniske led i forbindelse med kontraktens  
+
+ indgåelse,
+2)	hvorvidt den indgåede kontrakt opbevares af tjenesteyderen, og  
+
+ om den er tilgængelig,
+3)	de tekniske hjælpeværktøjer til at finde og rette  
+
+ indtastningsfejl og
+4)	de sprog, kontrakten kan indgås på.
+Stk. 2. En tjenesteyder skal angive, hvilke relevante  
+
+ adfærdskodekser tjenesteyderen er tilsluttet og den elektroniske adgang  
+
+ til disse.
+Tekniske hjælpefunktioner m.v.
+
+
+§ 11. Inden en ordre afgives, skal en tjenesteyder  
+
+ stille hensigtsmæssige, effektive og tilgængelige tekniske  
+
+ hjælpeværktøjer til rådighed for tjenestemodtageren,  
+
+ hvorved denne får mulighed for at finde og rette indtastningsfejl.
+Stk. 2. En tjenesteyder skal stille kontraktbetingelser  
+
+ og generelle salgsbetingelser til rådighed på en sådan  
+
+ måde, at en tjenestemodtager har mulighed for at oplagre eller gengive  
+
+ disse.
+Ordrebekræftelse og -modtagelse
+
+
+§ 12. En tjenesteyder skal uden unødig  
+
+ forsinkelse elektronisk bekræfte modtagelsen af en elektronisk  
+
+ ordre.
+Stk. 2. En elektronisk ordre og den elektroniske  
+
+ ordrebekræftelse, jf. stk. 1, anses som modtaget, når  
+
+ adressaterne har adgang til disse.
+Undtagelser for elektronisk post og aftaler mellem  
+
+ erhvervsdrivende
+
+
+§ 13. Bestemmelserne i § 10, § 11, stk. 1, og §  
+
+ 12, stk. 1, finder ikke anvendelse på kontrakter, som parterne  
+
+ indgår udelukkende ved udveksling af elektronisk post eller lignende  
+
+ individuel kommunikation.
+Stk. 2. Bestemmelserne i § 10, § 11, stk. 1, og § 12 kan  
+
+ fraviges ved aftale mellem parter, der ikke er forbrugere.
+Ren videreformidling
+
+
+§ 14. En tjenesteyder, som på et  
+
+ kommunikationsnet transmitterer information, der leveres af en  
+
+ tjenestemodtager, er ikke ansvarlig for den transmitterede information, hvis  
+
+ tjenesteyderen
+1)	ikke selv tager initiativ til transmissionen,
+2)	ikke udvælger modtageren af transmissionen og
+3)	hverken udvælger eller ændrer den transmitterede  
+
+ information.
+Stk. 2. Transmission som nævnt i stk. 1 omfatter  
+
+ også automatisk, mellemliggende og kortvarig oplagring af information,  
+
+ hvis denne oplagring udelukkende har til formål at gennemføre  
+
+ transmissionen, og hvis oplagringen ikke varer længere, end hvad der  
+
+ med rimelighed kan antages at være nødvendigt for at  
+
+ gennemføre transmissionen.
+Stk. 3. Bestemmelserne i stk. 1 og 2 gælder  
+
+ også for en tjenesteyder, der leverer adgang til et  
+
+ kommunikationsnet.
+Caching
+
+
+§ 15. En tjenesteyder, som på et  
+
+ kommunikationsnet transmitterer information, der leveres af en  
+
+ tjenestemodtager, er ikke ansvarlig for automatisk, mellemliggende og  
+
+ midlertidig oplagring af denne information eller for indholdet af  
+
+ informationen, hvis oplagringen alene er foretaget med henblik på at  
+
+ gøre senere transmission af informationen til andre tjenestemodtagere  
+
+ efter disses anmodning mere effektiv, og hvis tjenesteyderen
+1)	ikke ændrer informationen,
+2)	overholder betingelserne for adgang til informationen,
+3)	overholder de regler om ajourføring af informationen, der er  
+
+ almindeligt anerkendt og anvendt i branchen,
+4)	ikke foretager indgreb i den lovlige anvendelse af teknologi, som er  
+
+ almindeligt anerkendt og anvendt i branchen, for at skaffe sig data om  
+
+ anvendelsen af informationen og
+5)	straks tager skridt til at fjerne den information, tjenesteyderen  
+
+ har oplagret, eller til at hindre adgangen til den, når tjenesteyderen  
+
+ får kendskab til, at informationen er blevet fjernet fra nettet eller  
+
+ adgangen til den hindret, eller at en domstol eller en administrativ  
+
+ myndighed har krævet informationen fjernet eller adgangen til den  
+
+ hindret.
+Oplagring
+
+
+§ 16. En tjenesteyder er ikke ansvarlig for  
+
+ oplagring af information eller for indholdet af den oplagrede information,  
+
+ når oplagringen sker på anmodning af en tjenestemodtager, der har  
+
+ leveret informationen, og hvis tjenesteyderen
+1)	ikke har kendskab til den ulovlige eller skadevoldende aktivitet  
+
+ eller information og, for så vidt angår erstatningskrav, ikke har  
+
+ kendskab til forhold eller omstændigheder, hvoraf den skadevoldende  
+
+ aktivitet eller information fremgår, eller
+2)	fra det tidspunkt, hvor tjenesteyderen får et kendskab som  
+
+ nævnt i nr. 1, straks tager skridt til at fjerne informationen eller  
+
+ hindre adgangen til den.
+Stk. 2. Bestemmelsen i stk. 1 finder ikke anvendelse,  
+
+ når tjenestemodtageren handler under tjenesteyderens myndighed eller  
+
+ kontrol.
+Kontaktpunkter
+
+
+§ 17. Økonomi- og erhvervsministeren  
+
+ udpeger efter forhandling med de berørte ministre de myndigheder, der  
+
+ skal være kontaktpunkt for samarbejde efter loven. Økonomi- og  
+
+ erhvervsministeren meddeler Kommissionen og medlemsstaterne i Den  
+
+ Europæiske Union nærmere oplysninger om de udpegede  
+
+ myndigheder.
+Stk. 2. Økonomi- og erhvervsministeren udpeger  
+
+ efter forhandling med de berørte ministre de organer, der skal  
+
+ være kontaktpunkt for tjenesteydere og tjenestemodtagere.  
+
+ Kontaktpunktet yder generel rådgivning og klagevejledning om  
+
+ kontraktforhold og henviser til relevante organer for yderligere information  
+
+ og praktisk bistand. Der skal være elektronisk adgang til  
+
+ kontaktpunktet.
+Stk. 3. Økonomi- og erhvervsministeren kan efter  
+
+ forhandling med de berørte ministre fastsætte nærmere  
+
+ regler for de i stk. 1 og 2 nævnte kontaktpunkter.
+Ikrafttræden
+
+
+§ 18. Loven træder i kraft dagen efter  
+
+ bekendtgørelsen i Lovtidende.
+Færøerne og Grønland
+
+
+§ 19. Loven gælder ikke for  
+
+ Færøerne og Grønland, men kan ved kongelig anordning  
+
+ sættes i kraft for disse landsdele med de afvigelser, som de  
+
+ særlige færøske og grønlandske forhold  
+
+ tilsiger.
+
+
+
+Givet på Amalienborg, den 22. april  
+
+ 2002
+Under Vor Kongelige Hånd og Segl
+Margrethe R.
+/Bendt Bendtsen
+
+
+Officielle noter
+1)   Loven  
+
+ gennemfører Europa-Parlamentets og Rådets direktiv 2000/31/EF af  
+
+ 8. juni 2000 om visse retlige aspekter af informationssamfundstjenester,  
+
+ navnlig elektronisk handel, i det indre marked (EF-Tidende 2000 nr. L 178 af  
+
+ 17/7 2000, s. 1-16).

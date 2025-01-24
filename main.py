@@ -1,30 +1,43 @@
 from bs4 import BeautifulSoup
-import requests as rq
-import urllib.parse
-import os
+from selenium import webdriver
 import time
+from tqdm import tqdm
 
-BASE_URL = 'https://danskelove.dk'
-CHARACTERS = 'abcdefghijklmnopqrstuvwxyzæøå'
+BASE_URL = 'https://www.retsinformation.dk{}'
+PAGE_URL = 'https://www.retsinformation.dk/documents?dt=10&ps=100&page={}'
+PAGES = range(0,25)
 
-for c in CHARACTERS:
-    url = f"{BASE_URL}/register/{c}"
-    res = rq.get(url)
-    soup = BeautifulSoup(res.text)
-    laws = soup.find_all("ul", attrs={'class': None})[0]
-    for law in laws.find_all('a', href=True):
-        law_url = law["href"]
-        title = urllib.parse.unquote(law_url, encoding="utf-8")
-        title = title.replace("/","")
-        file_path = f"data/{title}"
-        if os.path.exists(file_path) or title == "retsplejeloven":
-            continue
-        time.sleep(5)
-        law_res = rq.get(f"{BASE_URL}{law_url}")
-        law_soup = BeautifulSoup(law_res.text)
-        law_html = law_soup.find_all("div", {'id': 'content'})[0]
-        with open(file_path, 'w') as f:
-            f.write(law_html.get_text())
+driver = webdriver.Chrome()
 
-        print(f"wrote file to {file_path}")
-   
+with tqdm(total = 2441) as pbar:
+    for page in PAGES:
+        try: 
+            url = PAGE_URL.format(page)
+            
+            driver.get(url)
+            time.sleep(1)
+            res = driver.page_source
+            soup = BeautifulSoup(res, features='lxml')
+            rows = soup.find("div", attrs={'class': 'search-result-list'})
+            rows.find_all("div", attrs={'typeof': 'eli:LegalResource'})
+            for row in rows: 
+                if len(row.find_all("span", attrs={'resource': 'eli:InForce-inForce'})) == 0:
+                    pbar.update(1)
+                    continue
+                law_link = row.find_all("a", attrs={'class': 'document-title'})[0]
+
+                driver.get(BASE_URL.format(law_link['href']))
+                time.sleep(2)
+                law_soup = BeautifulSoup(driver.page_source)
+                law = law_soup.find("div", attrs={'class': 'document-content'}).get_text()
+                title = law_link['href'].replace('/', '-')[1:]
+            
+                file_path = f"data2/{title}.txt"
+
+                with open(file_path, 'w') as f:
+                    f.write(law)
+                pbar.update(1)
+        except:
+            print(law_link['href'])
+    
+        
