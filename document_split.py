@@ -81,8 +81,6 @@ def get_questions(context: str) -> List[str]:
         else:
             message = {"role": "user", "content": f"Jeg vil gerne have skrevet dette om til en række spørgsmål i følgende format 'spørgsmål 1|spørgsmål 2|..| spørgsmål': {response.message.content}"}
             response = chat(model="llama3.3", messages=[message])
-            print(response.message.content)
-
 
     return questions
 
