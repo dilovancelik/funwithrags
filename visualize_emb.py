@@ -64,7 +64,7 @@ layout = go.Layout(
         yaxis=dict(title='Y'),
         zaxis=dict(title='Z'),
     ),
-    title=f'3D Representation after t-SNE (Perplexity=5)'
+    title='3D Representation after t-SNE (Perplexity=5)'
 )
 
 
