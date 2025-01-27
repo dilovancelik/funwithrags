@@ -10,7 +10,7 @@ def custom_splitter(folder: str) -> List[Document]:
     documents = []
     files = glob("*.txt", root_dir=folder)
     with tqdm(total=len(files), desc="Splitting documents") as splitbar:
-        for file in files[:4]:
+        for file in files:
             with open(f"{folder}/{file}", "r") as f:
                 text = f.read()
                 start = 0
