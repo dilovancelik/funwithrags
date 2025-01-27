@@ -14,6 +14,7 @@ def custom_splitter(folder: str) -> List[Document]:
             with open(f"{folder}/{file}", "r") as f:
                 text = f.read()
                 start = 0
+                """
                 while start < len(text):
                     re_kap = r"\n\s+?Kapitel"
                     re_art = r"\n\s+?Artikel"
@@ -57,14 +58,14 @@ def custom_splitter(folder: str) -> List[Document]:
                     else:
                         content = text[start : start + 2000]
                         start += 1600
-
-                    questions = get_questions(context=content)
-                    for question in questions:
-                        documents.append({
-                            "question": question,
-                            "context": content,
-                            "source": file,
-                        })
+                """
+                questions = get_questions(context=text)
+                for question in questions:
+                    documents.append({
+                        "question": question,
+                        "context": text,
+                        "source": file,
+                    })
             splitbar.update(1)
     return documents
 
@@ -72,12 +73,18 @@ def custom_splitter(folder: str) -> List[Document]:
 def get_questions(context: str) -> List[str]:
     content = f"Hvilke spørsmål ville passe godt til følgende tekst, jeg vil have svaret i formattet spørgsmål 1|spørgsmål 2|..| spørgsmål n og uden wrapper tekst: {context}"
     message = {"role": "user", "content": content}
-    response: ChatResponse = chat(model="llama3", messages=[message])
-    questions = response.message.content.split("|")
+    response: ChatResponse = chat(model="llama3.3", messages=[message])
+    while True: 
+        if response.message.content.find("|") != -1:
+            questions = response.message.content.split("|")
+            break
+        else:
+            message = {"role": "user", "content": f"Jeg vil gerne have skrevet dette om til en række spørgsmål i følgende format 'spørgsmål 1|spørgsmål 2|..| spørgsmål': {response.message.content}"}
+            response = chat(model="llama3.3")
 
     return questions
 
-documents = custom_splitter("data2")
+documents = custom_splitter("data")
 with open("split_docs.json", "w") as outfile:
     json.dump(documents, outfile)
 
