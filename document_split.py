@@ -23,12 +23,13 @@ def get_questions(context: str) -> List[str]:
 with open("documents.csv", "r") as f:
     documents = f.readlines()
 
-for doc in documents:
-    questions = get_questions(doc)
-    with open("results.csv", "a") as res:
-        for question in questions:
-            obj = { "question": question, "context": doc }
-            res.write(f"{json.dumps(obj)}\n")
+with tqdm(total = len(documents), desc="generating questions") as pbar:
+    for doc in documents:
+        questions = get_questions(doc)
+        with open("results.csv", "a") as res:
+            for question in questions:
+                obj = { "question": question, "context": doc }
+                res.write(f"{json.dumps(obj)}\n")
 
-    
+        
 
