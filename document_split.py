@@ -28,7 +28,7 @@ for doc in documents:
     with open("results.csv", "a") as res:
         for question in questions:
             obj = { "question": question, "context": doc }
-            res.write(json.dumps(obj))
+            res.write(f"{json.dumps(obj)}\n")
 
     
 
