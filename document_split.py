@@ -31,5 +31,7 @@ with tqdm(total = len(documents), desc="generating questions") as pbar:
                 obj = { "question": question, "context": doc }
                 res.write(f"{json.dumps(obj)}\n")
 
+        pbar.update(1)
+
         
 
