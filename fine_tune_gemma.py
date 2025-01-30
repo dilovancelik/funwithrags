@@ -1,46 +1,85 @@
-from sentence_transformers import SentenceTransformer, InputExample, losses
-import torch
-from torch.utils.data import DataLoader
-from sklearn.model_selection import train_test_split
-import pandas as pd
-import json
+from typing import List
+import random
+from llama_index.llms.ollama import Ollama
+from llama_index.finetuning import (
+    generate_qa_embedding_pairs,
+    EmbeddingQAFinetuneDataset,
+    SentenceTransformersFinetuneEngine,
+)
+from llama_index.core.schema import TextNode
 
-with open("results.csv", "r") as f:
-  pairs = [json.loads(pair) for pair in f.readlines()]
-df = pd.DataFrame(pairs)
-train, test = train_test_split(df, test_size=0.1, random_state=31)
 
-# Prepare train examples
-train_examples = []
-for _, row in train.iterrows():
-    question = row["question"]
-    answer = row["context"]
-    train_examples.append(InputExample(
-        texts=[question, answer],
-        label=1.0
-    ))
+PROMPT_TEMPLATE = """\
+Kontekst er nedenfor.
 
-# (Optional) prepare test examples for evaluation later
-test_examples = []
-for _, row in test.iterrows():
-    question = row["question"]
-    answer = row["context"]
-    test_examples.append(InputExample(
-        texts=[question, answer],
-        label=1.0
-    ))
+---------------------
+{context_str}
+---------------------
 
-train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=128)
+Givet den givne kontekst og ingen anden viden.
+Generer kun spørgsmål baseret på nedenstående forespørgsel.
 
-model_id = "BAAI/bge-multilingual-gemma2"
-model = SentenceTransformer(model_id, model_kwargs={"torch_dtype": torch.float16})
-train_loss = losses.MultipleNegativesRankingLoss(model)
+Du er en advokat / jurist. Din opgave er at opstille \
+{num_questions_per_chunk} spørgsmål til en eksamen. \
+Spørgsmålene skal være forskellige og dække hele konteksten. \
+Begræns spørgsmålene til den givne kontekst. \
+"""
 
-model.fit(
-    train_objectives=[(train_dataloader, train_loss)],
-    epochs=1,
-    warmup_steps=int(len(train_dataloader)*0.1),
-    show_progress_bar=True
+llm = Ollama(model="llama3")
+
+
+def load_corpus(file_path: str, val_percentage: float):
+    with open(file_path, "r") as f:
+        docs = f.readlines()
+
+    random.shuffle(docs)
+    train_corpus = docs[: int(len(docs) * (1 - val_percentage))]
+    validation_corpus = docs[int(len(docs) * (1 - val_percentage)) :]
+
+    train_nodes: List[TextNode] = []
+    for doc in train_corpus:
+        node = TextNode()
+        node.set_content(doc)
+        train_nodes.append(node)
+
+    val_nodes: List[TextNode] = []
+    for doc in validation_corpus:
+        node = TextNode()
+        node.set_content(doc)
+        val_nodes.append(node)
+
+    print(f"Parsed {len(train_nodes) + len(val_nodes)} nodes")
+
+    return train_nodes, val_nodes
+
+
+train_nodes, val_nodes = load_corpus("documents.csv", 0.1)
+
+train_dataset = generate_qa_embedding_pairs(
+    llm=llm,
+    nodes=train_nodes,
+    qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
+    output_path="train_dataset.json",
+)
+val_dataset = generate_qa_embedding_pairs(
+    llm=llm,
+    nodes=val_nodes,
+    qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
+    output_path="val_dataset.json",
+)
+print(f"Train: {len(train_nodes)}, Validation: {len(val_nodes)}")
+
+# [Optional] Load
+train_dataset = EmbeddingQAFinetuneDataset.from_json("train_dataset.json")
+val_dataset = EmbeddingQAFinetuneDataset.from_json("val_dataset.json")
+
+finetune_engine = SentenceTransformersFinetuneEngine(
+    train_dataset,
+    model_id="BAAI/bge-multilingual-gemma2",
+    model_output_path="fine_tune_bge_multilinugal-gemma2-danish_law",
+    val_dataset=val_dataset,
 )
 
-model.save("my_finetuned_gemma2")
+finetune_engine.finetune()
+embed_model = finetune_engine.get_finetuned_model()
+embed_model
