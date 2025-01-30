@@ -1,4 +1,5 @@
 from typing import List
+from pathlib import Path
 import random
 from llama_index.llms.ollama import Ollama
 from llama_index.finetuning import (
@@ -55,23 +56,26 @@ def load_corpus(file_path: str, val_percentage: float):
 
 train_nodes, val_nodes = load_corpus("documents.csv", 0.1)
 
-train_dataset = generate_qa_embedding_pairs(
-    llm=llm,
-    nodes=train_nodes,
-    qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
-    output_path="train_dataset.json",
-)
-val_dataset = generate_qa_embedding_pairs(
-    llm=llm,
-    nodes=val_nodes,
-    qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
-    output_path="val_dataset.json",
-)
-print(f"Train: {len(train_nodes)}, Validation: {len(val_nodes)}")
 
-# [Optional] Load
-train_dataset = EmbeddingQAFinetuneDataset.from_json("train_dataset.json")
-val_dataset = EmbeddingQAFinetuneDataset.from_json("val_dataset.json")
+if Path("train_dataset.json").exists() and Path("val_dataset.json").exists():
+    print("loading existing embedding qa dataset")
+    train_dataset = EmbeddingQAFinetuneDataset.from_json("train_dataset.json")
+    val_dataset = EmbeddingQAFinetuneDataset.from_json("val_dataset.json")
+else:
+    print("creating embedding qa dataset")
+    train_dataset = generate_qa_embedding_pairs(
+        llm=llm,
+        nodes=train_nodes,
+        qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
+        output_path="train_dataset.json",
+    )
+
+    val_dataset = generate_qa_embedding_pairs(
+        llm=llm,
+        nodes=val_nodes,
+        qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
+        output_path="val_dataset.json",
+    )
 
 finetune_engine = SentenceTransformersFinetuneEngine(
     train_dataset,
