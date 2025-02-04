@@ -75,7 +75,7 @@ def tokenize_function(examples):
 tokenized_dataset = train.map(tokenize_function, batched=True)
 
 
-def compute_loss(model, inputs, return_outputs=False):
+def compute_loss(model, inputs, return_outputs=False, **kwargs):
     outputs = model(**inputs)
     loss_fct = nn.CrossEntropyLoss()
     logits = outputs.logits
