@@ -27,7 +27,7 @@ base_model = AutoModel.from_pretrained(
 # 2. Set up the LoRA configuration
 lora_config = LoraConfig(
     task_type=TaskType.FEATURE_EXTRACTION,  # we're fine-tuning the model for feature extraction (embeddings)
-    r=32,  # LoRA rank
+    r=8,  # LoRA rank
     lora_alpha=32,  # scaling factor
     lora_dropout=0.1,  # dropout probability for LoRA layers
     bias="none",  # no bias adaptation
