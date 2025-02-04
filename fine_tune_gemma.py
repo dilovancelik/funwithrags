@@ -72,7 +72,6 @@ def load_corpus(file_path: str, val_percentage: float):
 
 train_nodes, val_nodes = load_corpus("documents.csv", 0.1)
 
-
 if Path("train_dataset.json").exists() and Path("val_dataset.json").exists():
     print("loading existing embedding qa dataset")
     train_dataset = EmbeddingQAFinetuneDataset.from_json("train_dataset.json")
