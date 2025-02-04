@@ -1,10 +1,18 @@
-from sentence_transformers import SentenceTransformer, InputExample, losses, models
 from peft import LoraConfig, TaskType, get_peft_model
-from torch.utils.data import DataLoader
 import torch
-from transformers import AutoTokenizer, AutoModel, BitsAndBytesConfig
+
+from transformers import (
+    AutoTokenizer,
+    AutoModel,
+    BitsAndBytesConfig,
+    Trainer,
+    TrainingArguments,
+    DataCollatorWithPadding,
+)
 from sklearn.model_selection import train_test_split
 import json
+from datasets import Dataset
+import pandas as pd
 
 # 1. Define model and load tokenizer
 model_name = "BAAI/bge-multilingual-gemma2"
@@ -13,8 +21,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,  # Enable 4-bit mode
     bnb_4bit_quant_type="nf4",  # Choose a quantization type (e.g., "nf4" or "fp4")
-    bnb_4bit_use_double_quant=True,  # Optionally use double quantization
-    bnb_4bit_compute_dtype=torch.float16,  # Compute in fp16 for efficiency
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_compute_dtype=torch.bfloat16,
 )
 
 # Load the base model in 8-bit mode (if supported by your hardware) to reduce memory usage.
@@ -43,51 +51,53 @@ lora_config = LoraConfig(
 peft_model = get_peft_model(base_model, lora_config)
 peft_model.cuda()  # Move the model to GPU
 
-# 3. Build the SentenceTransformer model
-# Create a transformer module (which loads the model architecture and weights)
-word_embedding_model = models.Transformer(model_name)
-# Create a pooling module to compute sentence embeddings from token embeddings
-pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension())
-# Combine both into a SentenceTransformer model
-st_model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
-
-# Replace the transformer’s underlying model with our LoRA-adapted version.
-
-st_model._first_module().auto_model = peft_model
-
-if torch.cuda.device_count() > 1:
-    print(f"Using {torch.cuda.device_count()} GPUs via DataParallel")
-    st_model._first_module().auto_model = torch.nn.DataParallel(
-        st_model._first_module().auto_model
-    )
 
 input_examples = []
-with open("results.jsonl", "r", encoding="utf-8") as f:
-    for line in f:
-        item = json.loads(line.strip())
-        question = item["question"]
-        context = item["context"]
-        # Create an InputExample with the pair [question, context] and a label.
-        # The label here is set to 1.0 (indicating similarity); adjust as needed for your training objective.
-        input_examples.append(InputExample(texts=[question, context], label=1.0))
+with open("results.jsonl", "r") as f:
+    pairs = [json.loads(pair) for pair in f.readlines()]
+df = pd.DataFrame(pairs)
+df["label"] = 1
+train, test = train_test_split(df, test_size=0.1, random_state=31)
 
-# Optionally, split the data into training and test sets (here using 90% for training)
-train_examples, test_examples = train_test_split(
-    input_examples, test_size=0.1, random_state=42
+train = Dataset.from_pandas(train)
+test = Dataset.from_pandas(test)
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+data_collator = DataCollatorWithPadding(tokenizer)
+
+
+def tokenize_function(examples):
+    return tokenizer(examples["question"], examples["context"], truncation=True)
+
+
+tokenized_dataset = train.map(tokenize_function, batched=True)
+
+
+def compute_loss(model, inputs, return_outputs=False):
+    outputs = model(**inputs)
+    loss_fct = nn.CrossEntropyLoss()
+    logits = outputs.logits
+    labels = inputs["label"]
+    loss = loss_fct(logits, labels)
+    return (loss, outputs) if return_outputs else loss
+
+
+training_args = TrainingArguments(
+    output_dir="./peft_finetuned_baai_multilingual_gemma2_danish_law",
+    per_device_train_batch_size=32,  # Adjust based on your GPU memory
+    num_train_epochs=3,
+    learning_rate=2e-5,
+    logging_steps=10,
+    fp16=True,  # Enable mixed precision training
+    save_total_limit=2,
+    evaluation_strategy="no",
 )
-
-# Create a DataLoader for training
-train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=128)
-
-# 5. Set up the loss function and fine-tune the model
-# We use the CosineSimilarityLoss to encourage similar embeddings for the question and context pairs.
-train_loss = losses.CosineSimilarityLoss(model=st_model)
-
-st_model.fit(
-    train_objectives=[(train_dataloader, train_loss)],
-    epochs=3,  # adjust number of epochs as needed
-    warmup_steps=10,  # adjust warmup steps based on your dataset size
-    output_path="./lora-finetuned-bge-danish-law",  # directory to save the finetuned model
-    show_progress_bar=True,
-    use_amp=True,  # enable automatic mixed precision if your hardware supports it
+trainer = Trainer(
+    model=peft_model,
+    args=training_args,
+    train_dataset=tokenized_dataset,
+    tokenizer=tokenizer,
+    data_collator=data_collator,
+    compute_loss_func=compute_loss,
 )
+trainer.train()
