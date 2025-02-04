@@ -1,5 +1,6 @@
-from peft import LoraConfig, TaskType, get_peft_model
+from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 import torch
+import torch.nn as nn
 
 from transformers import (
     AutoTokenizer,
@@ -31,7 +32,8 @@ base_model = AutoModel.from_pretrained(
     quantization_config=bnb_config,  # Note: requires bitsandbytes package and a supported GPU
     device_map="auto",
 )
-
+base_model.gradient_checkpoint_enable()
+base_model = prepare_model_for_kbit_training(base_model)
 # 2. Set up the LoRA configuration
 lora_config = LoraConfig(
     task_type=TaskType.FEATURE_EXTRACTION,  # we're fine-tuning the model for feature extraction (embeddings)
@@ -84,20 +86,22 @@ def compute_loss(model, inputs, return_outputs=False):
 
 training_args = TrainingArguments(
     output_dir="./peft_finetuned_baai_multilingual_gemma2_danish_law",
-    per_device_train_batch_size=32,  # Adjust based on your GPU memory
-    num_train_epochs=3,
-    learning_rate=2e-5,
-    logging_steps=10,
+    per_device_train_batch_size=1,  # Adjust based on your GPU memory
+    gradient_accumulation_steps=4,
+    warmup_steps=2,
+    max_steps=10,
+    learning_rate=2e-4,
+    logging_steps=1,
     fp16=True,  # Enable mixed precision training
-    save_total_limit=2,
-    evaluation_strategy="no",
+    optim="paged_adamw_8bit",
 )
 trainer = Trainer(
     model=peft_model,
-    args=training_args,
     train_dataset=tokenized_dataset,
+    args=training_args,
     tokenizer=tokenizer,
     data_collator=data_collator,
     compute_loss_func=compute_loss,
 )
+base_model.config.use_cache = False
 trainer.train()
