@@ -52,7 +52,14 @@ pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension
 st_model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
 # Replace the transformer’s underlying model with our LoRA-adapted version.
+
 st_model._first_module().auto_model = peft_model
+
+if torch.cuda.device_count() > 1:
+    print(f"Using {torch.cuda.device_count()} GPUs via DataParallel")
+    st_model._first_module().auto_model = torch.nn.DataParallel(
+        st_model._first_module().auto_model
+    )
 
 input_examples = []
 with open("results.jsonl", "r", encoding="utf-8") as f:
@@ -75,7 +82,6 @@ train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=128)
 # 5. Set up the loss function and fine-tune the model
 # We use the CosineSimilarityLoss to encourage similar embeddings for the question and context pairs.
 train_loss = losses.CosineSimilarityLoss(model=st_model)
-st_model = torch.nn.DataParallel(st_model)
 
 st_model.fit(
     train_objectives=[(train_dataloader, train_loss)],
