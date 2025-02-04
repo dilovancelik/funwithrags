@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer, InputExample, losses, mod
 from peft import LoraConfig, TaskType, get_peft_model
 from torch.utils.data import DataLoader
 import torch
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoTokenizer, AutoModel, BitsAndBytesConfig
 from sklearn.model_selection import train_test_split
 import json
 
@@ -10,17 +10,24 @@ import json
 model_name = "BAAI/bge-multilingual-gemma2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,  # Enable 4-bit mode
+    bnb_4bit_quant_type="nf4",  # Choose a quantization type (e.g., "nf4" or "fp4")
+    bnb_4bit_use_double_quant=True,  # Optionally use double quantization
+    bnb_4bit_compute_dtype=torch.float16,  # Compute in fp16 for efficiency
+)
+
 # Load the base model in 8-bit mode (if supported by your hardware) to reduce memory usage.
 base_model = AutoModel.from_pretrained(
     model_name,
-    load_in_8bit=True,  # Note: requires bitsandbytes package and a supported GPU
+    quantization_config=bnb_config,  # Note: requires bitsandbytes package and a supported GPU
     device_map="auto",
 )
 
 # 2. Set up the LoRA configuration
 lora_config = LoraConfig(
     task_type=TaskType.FEATURE_EXTRACTION,  # we're fine-tuning the model for feature extraction (embeddings)
-    r=8,  # LoRA rank
+    r=32,  # LoRA rank
     lora_alpha=32,  # scaling factor
     lora_dropout=0.1,  # dropout probability for LoRA layers
     bias="none",  # no bias adaptation
