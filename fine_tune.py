@@ -70,7 +70,7 @@ train_examples, test_examples = train_test_split(
 )
 
 # Create a DataLoader for training
-train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
+train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=128)
 
 # 5. Set up the loss function and fine-tune the model
 # We use the CosineSimilarityLoss to encourage similar embeddings for the question and context pairs.
