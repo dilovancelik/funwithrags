@@ -32,7 +32,7 @@ base_model = AutoModel.from_pretrained(
     quantization_config=bnb_config,  # Note: requires bitsandbytes package and a supported GPU
     device_map="auto",
 )
-base_model.gradient_checkpoint_enable()
+base_model.gradient_checkpointing_enable()
 base_model = prepare_model_for_kbit_training(base_model)
 # 2. Set up the LoRA configuration
 lora_config = LoraConfig(
