@@ -12,7 +12,6 @@ models_to_evaluate = [
     "Salesforce/SFR-Embedding-2_R",
     "Salesforce/SFR-Embedding-Mistral",
     "GritLM/GritLM-7B",
-    "GritLM/GritLM-7B",
     "Snowflake/snowflake-arctic-embed-l-v2.0",
     "nvidia/NV-Embed-v1",
     "intfloat/multilingual-e5-large",
@@ -25,7 +24,7 @@ for model_name in models_to_evaluate:
     for result in saved_results:
         if model_name in result:
             models_to_evaluate.remove(model_name)
-
+print(models_to_evaluate)
 for model_name in models_to_evaluate:
     with torch.no_grad():
         model = SentenceTransformer(model_name)
