@@ -20,12 +20,13 @@ models_to_evaluate = [
 with open("eval_results.jsonl", "r") as f:
     saved_results = f.readlines()
 
+remaining_models = []
 for model_name in models_to_evaluate:
     for result in saved_results:
-        if model_name in result:
-            models_to_evaluate.remove(model_name)
-print(models_to_evaluate)
-for model_name in models_to_evaluate:
+        if model_name not in result:
+            remaining_models.append(model_name)
+print(remaining_models)
+for model_name in remaining_models:
     with torch.no_grad():
         model = SentenceTransformer(model_name)
         evaluator = TripletEvaluator(
