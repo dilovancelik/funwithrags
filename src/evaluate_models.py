@@ -27,19 +27,20 @@ for model_name in models_to_evaluate:
             models_to_evaluate.remove(model_name)
 
 for model_name in models_to_evaluate:
-    model = SentenceTransformer(model_name)
-    evaluator = TripletEvaluator(
-        anchors=dataset["test"]["question"],
-        positives=dataset["test"]["context"],
-        negatives=dataset["test"]["neg_context"],
-        name=f"{model_name}_eval",
-        show_progress_bar=True,
-    )
-    result = evaluator(model)
+    with torch.no_grad():
+        model = SentenceTransformer(model_name)
+        evaluator = TripletEvaluator(
+            anchors=dataset["test"]["question"],
+            positives=dataset["test"]["context"],
+            negatives=dataset["test"]["neg_context"],
+            name=f"{model_name}_eval",
+            show_progress_bar=True,
+        )
+        result = evaluator(model)
     print(result)
 
     with open("eval_results.jsonl", "a") as f:
         f.write(f"{result}\n")
-
+    del model
     torch.cuda.empty_cache()
     gc.collect()
