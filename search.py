@@ -7,20 +7,8 @@ from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_core.vectorstores import InMemoryVectorStore
 
 
-def similarity_score(query: str, path: str):
-    input_words = set(query.lower().split(" "))
-    document_words = ()
-    with open(path, "r") as f:
-        document_words = set(f.read().lower().split(" "))
-
-    common_words = len(input_words.intersection(document_words))
-    all_words = len(input_words.union(document_words))
-
-    return common_words / all_words
-
-
 def embed_documents():
-    conn = pg.connect("dbname=vector_rag user=postgres password=postgres")
+    conn = pg.connect(os.getenv("PG_CONN_STR"))
     cur = conn.cursor()
 
     embedding = OllamaEmbeddings(
