@@ -24,7 +24,7 @@ with open("eval_results.jsonl", "r") as f:
 for model_name in models_to_evaluate:
     for result in saved_results:
         if model_name in result:
-            models_to_evaluate.pop(model_name)
+            models_to_evaluate.remove(model_name)
 
 for model_name in models_to_evaluate:
     model = SentenceTransformer(model_name)
