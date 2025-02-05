@@ -29,8 +29,6 @@ for model_name in models_to_evaluate:
     )
     result = evaluator(model)
     print(result)
-    results.append(result)
-
-with open("eval_results.jsonl", "a") as f:
-    for result in results:
-        f.write(f"{json.dumps(result)}\n")
+    with open("eval_results.jsonl", "a") as f:
+        for result in results:
+            f.write(f"{json.dumps(result)}\n")
