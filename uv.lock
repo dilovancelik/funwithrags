@@ -2784,6 +2784,16 @@ wheels = [
 ]
 
 [[package]]
+name = "psycopg2"
+version = "2.9.10"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/62/51/2007ea29e605957a17ac6357115d0c1a1b60c8c984951c19419b3474cdfd/psycopg2-2.9.10.tar.gz", hash = "sha256:12ec0b40b0273f95296233e8750441339298e6a572f7039da5b260e3c8b60e11", size = 385672 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3d/16/4623fad6076448df21c1a870c93a9774ad8a7b4dd1660223b59082dd8fec/psycopg2-2.9.10-cp312-cp312-win32.whl", hash = "sha256:65a63d7ab0e067e2cdb3cf266de39663203d38d6a8ed97f5ca0cb315c73fe067", size = 1025113 },
+    { url = "https://files.pythonhosted.org/packages/66/de/baed128ae0fc07460d9399d82e631ea31a1f171c0c4ae18f9808ac6759e3/psycopg2-2.9.10-cp312-cp312-win_amd64.whl", hash = "sha256:4a579d6243da40a7b3182e0430493dbd55950c493d8c68f4eec0b302f6bbf20e", size = 1163951 },
+]
+
+[[package]]
 name = "ptyprocess"
 version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3889,6 +3899,7 @@ dependencies = [
     { name = "beautifulsoup4" },
     { name = "datasets" },
     { name = "einops" },
+    { name = "huggingface-hub" },
     { name = "jupyter" },
     { name = "langchain-chroma" },
     { name = "langchain-community" },
@@ -3903,6 +3914,7 @@ dependencies = [
     { name = "pandas" },
     { name = "peft" },
     { name = "plotly" },
+    { name = "psycopg2" },
     { name = "requests" },
     { name = "scikit-learn" },
     { name = "selenium" },
@@ -3918,6 +3930,7 @@ requires-dist = [
     { name = "beautifulsoup4", specifier = ">=4.12.3" },
     { name = "datasets", specifier = ">=3.2.0" },
     { name = "einops", specifier = ">=0.8.0" },
+    { name = "huggingface-hub", specifier = ">=0.27.1" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "langchain-chroma", specifier = ">=0.1.4" },
     { name = "langchain-community", specifier = ">=0.3.14" },
@@ -3932,6 +3945,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "peft", specifier = ">=0.14.0" },
     { name = "plotly", specifier = ">=5.24.1" },
+    { name = "psycopg2", specifier = ">=2.9.10" },
     { name = "requests", specifier = ">=2.32.3" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
     { name = "selenium", specifier = ">=4.27.1" },
