@@ -20,7 +20,7 @@ if __name__ == "__main__":
     model_name = "Snowflake/snowflake-arctic-embed-l-v2.0"
     model = SentenceTransformer(model_name)
 
-    llm = Ollama(model="llama3.3", request_timeout=90)
+    llm = Ollama(model="phi4", request_timeout=90)
     while True:
         query = input("Hvilket emne vil du høre Mette Frederiksens mening om?\n")
         print("Tænker ...")
