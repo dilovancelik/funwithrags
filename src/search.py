@@ -1,5 +1,5 @@
 import psycopg2 as pg
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, models
 from llama_index.llms.ollama import Ollama
 
 METTE_PROMPT_TEMPLATE = """\
@@ -13,6 +13,7 @@ Du skal svarer på dansk \
 ---------------------
 """
 
+models.Transformer
 
 if __name__ == "__main__":
     print("Forbereder Mette bot")
@@ -32,7 +33,7 @@ if __name__ == "__main__":
         cur = conn.cursor()
 
         cur.execute(
-            "SELECT speech, context, line FROM speeches_embeddings_v2 ORDER BY embedding <-> %s::vector LIMIT 5;",
+            "SELECT speech, context, line FROM speeches_embeddings_v2 ORDER BY embedding <-> %s::vector LIMIT 30;",
             (str(emb),),
         )
 
@@ -53,9 +54,9 @@ if __name__ == "__main__":
         cur.close()
         conn.close()
 
-        print("Prøver at formulere mig...")
-        res = llm.complete(prompt)
-        print(res)
+        # print("Prøver at formulere mig...")
+        # res = llm.complete(prompt)
+        # print(res)
         print("\n\nLink til Taler og Citater som er valgt:")
         for row in result:
             print(

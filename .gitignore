@@ -174,3 +174,4 @@ taler/
 notebooks/models/
 *.csv
 *.jsonl
+taler_mette/
