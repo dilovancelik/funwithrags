@@ -1,7 +1,7 @@
 import ollama
 import json
 import random
-import requests as r
+import uuid
 
 PROMPT_TEMPLATE = """\
 Kontekst er nedenfor.
@@ -44,11 +44,21 @@ def load_corpus(file_path: str, val_percentage: float):
 
 train_nodes, val_nodes = load_corpus("taler.txt", 0.2)
 
+dataset = {"queries": {}, "corpus": {}, "relevant_docs": {}, "mode": "text"}
+
 for doc in train_nodes[:10]:
     prompt = PROMPT_TEMPLATE.format(context_str=doc)
     res = ollama.chat("llama3.3", messages=[{"role": "user", "content": prompt}])
-    res. 
-    print(res.message.content)
+    content_id = uuid.uuid4()
+    dataset["corpus"][content_id] = doc
+    for query in res.split("|"):
+        query_id = uuid.uuid4()
+        dataset["queries"][query_id] = query
+        dataset["relevant_docs"][query_id] = [content_id]
+
+with open("train_data.json", "w") as f:
+    json.dump(dataset, f)
+
 """
 train_dataset = generate_qa_embedding_pairs(
     llm=llm,
