@@ -2,6 +2,7 @@ import ollama
 import json
 import random
 import uuid
+from tqdm import tqdm
 
 PROMPT_TEMPLATE = """\
 Kontekst er nedenfor.
@@ -46,15 +47,22 @@ train_nodes, val_nodes = load_corpus("taler.txt", 0.2)
 
 dataset = {"queries": {}, "corpus": {}, "relevant_docs": {}, "mode": "text"}
 
-for doc in train_nodes[:10]:
-    prompt = PROMPT_TEMPLATE.format(context_str=doc)
-    res = ollama.chat("llama3.3", messages=[{"role": "user", "content": prompt}])
-    content_id = uuid.uuid4()
-    dataset["corpus"][content_id] = doc
-    for query in res.split("|"):
-        query_id = uuid.uuid4()
-        dataset["queries"][query_id] = query
-        dataset["relevant_docs"][query_id] = [content_id]
+with tqdm(total=len(train_nodes), desc="Generating Queries") as fpbar:
+    i = 0
+    for doc in train_nodes:
+        prompt = PROMPT_TEMPLATE.format(context_str=doc)
+        res = ollama.chat("llama3.3", messages=[{"role": "user", "content": prompt}])
+        content_id = uuid.uuid4()
+        dataset["corpus"][content_id] = doc
+        for query in res.message.content.split("|"):
+            query_id = uuid.uuid4()
+            dataset["queries"][query_id] = query
+            dataset["relevant_docs"][query_id] = [content_id]
+        fpbar.update(1)
+        i += 1
+        if i % 100 == 0:
+            with open("train_data.json", "w") as f:
+                json.dump(dataset, f)
 
 with open("train_data.json", "w") as f:
     json.dump(dataset, f)
