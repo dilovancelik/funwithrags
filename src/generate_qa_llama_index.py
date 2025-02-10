@@ -52,10 +52,10 @@ with tqdm(total=len(train_nodes), desc="Generating Queries") as fpbar:
     for doc in train_nodes:
         prompt = PROMPT_TEMPLATE.format(context_str=doc)
         res = ollama.chat("llama3.3", messages=[{"role": "user", "content": prompt}])
-        content_id = uuid.uuid4()
+        content_id = str(uuid.uuid4())
         dataset["corpus"][content_id] = doc
         for query in res.message.content.split("|"):
-            query_id = uuid.uuid4()
+            query_id = str(uuid.uuid4())
             dataset["queries"][query_id] = query
             dataset["relevant_docs"][query_id] = [content_id]
         fpbar.update(1)
