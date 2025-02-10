@@ -20,14 +20,10 @@ Kontekst er nedenfor.
 ---------------------
 
 Givet den givne kontekst og ingen anden viden.
-Generer kun spørgsmål baseret på nedenstående forespørgsel.
+Genere op til 5 emner som kan beskrive konteksten,. 
+Hvis der ikke er emner som let kan beskrive konteksten, besvar med <|NAN|>
 
-Du er en advokat / jurist. Din opgave er at opstille \
-{num_questions_per_chunk} spørgsmål til en eksamen. \
-Spørgsmålene skal være forskellige og dække hele konteksten. \
-Begræns spørgsmålene til den givne kontekst. \
-Det er vigtigt at du kun svarere med spørgsmålene og intet andet. \
-F.eks må du IKKE skrive her er spørgsmålene \
+Du må kun svarer med emnerne formattet skal være: EMNE 1|Emne 2|...|Emne n|
 """
 
 llm = Ollama(model="llama3.3")
@@ -69,18 +65,18 @@ def load_corpus(file_path: str, val_percentage: float):
     return train_nodes, val_nodes
 
 
-train_nodes, val_nodes = load_corpus("documents.csv", 0.1)
+train_nodes, val_nodes = load_corpus("taler.txt", 0.2)
 
 
 train_dataset = generate_qa_embedding_pairs(
     llm=llm,
-    nodes=train_nodes,
+    nodes=train_nodes[:10],
     num_questions_per_chunk=4,
     qa_generate_prompt_tmpl=PROMPT_TEMPLATE,
     output_path="train_dataset.json",
     verbose=False,
 )
-
+"""
 val_dataset = generate_qa_embedding_pairs(
     llm=llm,
     nodes=val_nodes,
@@ -89,3 +85,4 @@ val_dataset = generate_qa_embedding_pairs(
     output_path="val_dataset.json",
     verbose=False,
 )
+"""
