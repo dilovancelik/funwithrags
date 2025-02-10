@@ -46,7 +46,7 @@ train_nodes, val_nodes = load_corpus("taler.txt", 0.2)
 
 for doc in train_nodes[:10]:
     prompt = PROMPT_TEMPLATE.format(context_str=doc)
-    res = ollama.chat("llama3", messages=[{"role": "user", "content": prompt}])
+    res = ollama.chat("llama3.3", messages=[{"role": "user", "content": prompt}])
     res. 
     print(res.message.content)
 """
